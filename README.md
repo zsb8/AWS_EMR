@@ -19,4 +19,24 @@ I use the data from https://insights.stackoverflow.com/survey
 from pyspark.sql import SparkSession    
 from pyspark.sql.functions import col
 ```
+Read data 
+```
+spark = SparkSession.builder.appName('zsbDemoApp').getOrCreate()
+all_data = spark.read.csv(S3_DATA_SOURCE_PATH, header=True)
+```
+Write data
+```
+selected_data = all_data.where((col('Country') == 'United States') & (col('WorkWeekHrs') > 45))
+selected_data.write.mode('overwrite').parquet(S3_DATA_OUTPUT_PATH)
+```
+# Step 4 Set the inbound policy
+![image](https://user-images.githubusercontent.com/75282285/225353850-2d9743c9-3b6c-4756-99e1-cd8b56d499f2.png)
+
+
+# Setp 5 connect master to run py
+
+![image](https://user-images.githubusercontent.com/75282285/225354097-83c484e9-81b5-4b45-90d9-361a9395bb16.png)
+run the command : `spark-submit main.py`
+![image](https://user-images.githubusercontent.com/75282285/225354002-fb05f638-4cf3-4b93-bbdc-b51e56abbb03.png)
+
 
