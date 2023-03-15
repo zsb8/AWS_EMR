@@ -33,10 +33,32 @@ selected_data.write.mode('overwrite').parquet(S3_DATA_OUTPUT_PATH)
 ![image](https://user-images.githubusercontent.com/75282285/225353850-2d9743c9-3b6c-4756-99e1-cd8b56d499f2.png)
 
 
-# Setp 5 connect master to run py
+# Step 5 Connect to master and run py
 
 ![image](https://user-images.githubusercontent.com/75282285/225354097-83c484e9-81b5-4b45-90d9-361a9395bb16.png)
 run the command : `spark-submit main.py`
 ![image](https://user-images.githubusercontent.com/75282285/225354002-fb05f638-4cf3-4b93-bbdc-b51e56abbb03.png)
+
+# Step 6 Check S3
+The program will read the CSV, filt data and place the result on S3 output folder.
+![image](https://user-images.githubusercontent.com/75282285/225355409-67e6dafa-bbc9-4a34-a48f-cedb414c1af5.png)
+
+# Step 7 Monitor
+![image](https://user-images.githubusercontent.com/75282285/225355577-7a5d7ce5-dbfb-47e5-81aa-a5a69f47d13c.png)
+HDFS Name Node
+![image](https://user-images.githubusercontent.com/75282285/225355739-46e098c1-1db6-4cd9-b167-da32cf8a5972.png)
+Resource Manager
+![image](https://user-images.githubusercontent.com/75282285/225355848-07b514dc-2d7c-4728-9147-c50dfd395fe6.png)
+Spark UI 
+![image](https://user-images.githubusercontent.com/75282285/225355970-49bc9671-d5d7-489b-bc7c-cbe6db5daba3.png)
+
+
+
+
+
+
+
+
+
 
 
